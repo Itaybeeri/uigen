@@ -1,0 +1,93 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - heading "React Component Generator" [level=1] [ref=e7]
+      - generic [ref=e9]:
+        - generic [ref=e52]:
+          - generic [ref=e53]:
+            - generic [ref=e56]: Create a user profile card component with an avatar, name, title, bio, and social stats
+            - img [ref=e59]
+          - generic [ref=e84]:
+            - img [ref=e87]
+            - generic [ref=e92]:
+              - paragraph [ref=e94]: I'll create a user profile card component for you with all those elements!
+              - generic [ref=e97]: Code written
+              - separator [ref=e98]
+              - paragraph [ref=e100]: "Now let me create the UserProfileCard component:"
+              - generic [ref=e103]: Code written
+              - separator [ref=e104]
+              - generic [ref=e105]:
+                - paragraph [ref=e106]: "Perfect! I've created a beautiful user profile card component for you. Here's what I built:"
+                - paragraph [ref=e107]:
+                  - strong [ref=e108]: "Files created:"
+                - list [ref=e109]:
+                  - listitem [ref=e110]:
+                    - code [ref=e319]: /App.jsx
+                    - text: — The main app that displays the profile card with sample data
+                  - listitem [ref=e112]:
+                    - code [ref=e320]: /components/UserProfileCard.jsx
+                    - text: — The reusable profile card component
+                - paragraph [ref=e114]:
+                  - strong [ref=e115]: "Features:"
+                - list [ref=e116]:
+                  - listitem [ref=e117]:
+                    - strong [ref=e118]: Avatar
+                    - text: — Circular image with a border that overlaps the header
+                  - listitem [ref=e119]:
+                    - strong [ref=e120]: Name & Title
+                    - text: — Prominently displayed with the title in blue
+                  - listitem [ref=e121]:
+                    - strong [ref=e122]: Bio
+                    - text: — A short description section
+                  - listitem [ref=e123]:
+                    - strong [ref=e124]: Social Stats
+                    - text: — Three columns showing followers, following, and projects
+                  - listitem [ref=e125]:
+                    - strong [ref=e126]: Action Buttons
+                    - text: — Follow, Message, and Share buttons with icons from lucide-react
+                  - listitem [ref=e127]:
+                    - strong [ref=e128]: Styling
+                    - text: — Clean, modern design with a gradient header, shadow effects, and smooth hover states
+                - paragraph [ref=e129]: The component is fully customizable—just pass different props for avatar, name, title, bio, and stats. Try it out in the preview!
+        - generic [ref=e19]:
+          - textbox "Describe the React component you want to create..." [ref=e20]
+          - button [disabled] [ref=e21]:
+            - img [ref=e22]
+    - separator [ref=e25]
+    - generic [ref=e27]:
+      - generic [ref=e28]:
+        - tablist [ref=e30]:
+          - tab "Preview" [selected] [ref=e31]
+          - tab "Code" [ref=e32]
+        - generic [ref=e33]:
+          - button "Sign In" [ref=e34]
+          - button "Sign Up" [ref=e35]
+      - iframe [ref=e324]:
+        - generic [ref=f3e6]:
+          - img "Sarah Anderson" [ref=f3e8]
+          - heading "Sarah Anderson" [level=2] [ref=f3e9]
+          - paragraph [ref=f3e10]: Product Designer
+          - paragraph [ref=f3e11]: Passionate about creating beautiful and intuitive user experiences. Coffee enthusiast ☕
+          - generic [ref=f3e12]:
+            - generic [ref=f3e13]:
+              - paragraph [ref=f3e14]: "2840"
+              - paragraph [ref=f3e15]: Followers
+            - generic [ref=f3e16]:
+              - paragraph [ref=f3e17]: "342"
+              - paragraph [ref=f3e18]: Following
+            - generic [ref=f3e19]:
+              - paragraph [ref=f3e20]: "28"
+              - paragraph [ref=f3e21]: Projects
+          - generic [ref=f3e22]:
+            - button "Follow" [ref=f3e23] [cursor=pointer]:
+              - img [ref=f3e24]
+              - text: Follow
+            - button "Message" [ref=f3e26] [cursor=pointer]:
+              - img [ref=f3e27]
+              - text: Message
+            - button [ref=f3e29] [cursor=pointer]:
+              - img [ref=f3e30]
+  - alert [ref=e46]
+  - generic [ref=e316]:
+    - alert
+    - alert
