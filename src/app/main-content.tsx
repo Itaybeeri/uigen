@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, memo, useCallback } from "react";
 import {
   ResizableHandle,
   ResizablePanel,
@@ -30,8 +30,18 @@ interface MainContentProps {
   };
 }
 
+// Memoized components to prevent unnecessary re-renders
+const MemoizedPreviewFrame = memo(PreviewFrame);
+const MemoizedCodeEditor = memo(CodeEditor);
+const MemoizedFileTree = memo(FileTree);
+
 export function MainContent({ user, project }: MainContentProps) {
   const [activeView, setActiveView] = useState<"preview" | "code">("preview");
+
+  // Memoized handler to prevent recreation on every render
+  const handleViewChange = useCallback((value: string) => {
+    setActiveView(value as "preview" | "code");
+  }, []);
 
   return (
     <FileSystemProvider initialData={project?.data}>
@@ -62,9 +72,7 @@ export function MainContent({ user, project }: MainContentProps) {
                 <div className="h-14 border-b border-neutral-200/60 px-6 flex items-center justify-between bg-neutral-50/50">
                   <Tabs
                     value={activeView}
-                    onValueChange={(v) =>
-                      setActiveView(v as "preview" | "code")
-                    }
+                    onValueChange={handleViewChange}
                   >
                     <TabsList className="bg-white/60 border border-neutral-200/60 p-0.5 h-9 shadow-sm">
                       <TabsTrigger value="preview" className="data-[state=active]:bg-white data-[state=active]:text-neutral-900 data-[state=active]:shadow-sm text-neutral-600 px-4 py-1.5 text-sm font-medium transition-all">Preview</TabsTrigger>
@@ -78,7 +86,7 @@ export function MainContent({ user, project }: MainContentProps) {
                 <div className="flex-1 overflow-hidden bg-neutral-50">
                   {activeView === "preview" ? (
                     <div className="h-full bg-white">
-                      <PreviewFrame />
+                      <MemoizedPreviewFrame />
                     </div>
                   ) : (
                     <ResizablePanelGroup
@@ -92,7 +100,7 @@ export function MainContent({ user, project }: MainContentProps) {
                         maxSize={50}
                       >
                         <div className="h-full bg-neutral-50 border-r border-neutral-200">
-                          <FileTree />
+                          <MemoizedFileTree />
                         </div>
                       </ResizablePanel>
 
@@ -101,7 +109,7 @@ export function MainContent({ user, project }: MainContentProps) {
                       {/* Code Editor */}
                       <ResizablePanel defaultSize={70}>
                         <div className="h-full bg-white">
-                          <CodeEditor />
+                          <MemoizedCodeEditor />
                         </div>
                       </ResizablePanel>
                     </ResizablePanelGroup>
