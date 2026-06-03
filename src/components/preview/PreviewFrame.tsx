@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, memo } from "react";
 import { useFileSystem } from "@/lib/contexts/file-system-context";
 import {
   createImportMap,
@@ -8,7 +8,7 @@ import {
 } from "@/lib/transform/jsx-transformer";
 import { AlertCircle } from "lucide-react";
 
-export function PreviewFrame() {
+function PreviewFrame() {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const { getAllFiles, refreshTrigger } = useFileSystem();
   const [error, setError] = useState<string | null>(null);
@@ -158,3 +158,7 @@ export function PreviewFrame() {
     />
   );
 }
+
+// Export memoized version to prevent unnecessary re-renders
+const MemoizedPreviewFrame = memo(PreviewFrame);
+export { MemoizedPreviewFrame as PreviewFrame };
